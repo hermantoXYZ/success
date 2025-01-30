@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Success | FEB-UNM</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}?v={{ STATIC_VERSION }}"> 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Login Page -->
+
+    <div class="container">
+        <i id="theme-toggle" class="ri-moon-line"></i>
+        <div class="logo">
+            <img src="https://unm.ac.id/wp-content/uploads/2022/02/logo-unm-blu-800x186.png" alt="Success">
+        </div>
+        <p class="info">Silahkan login untuk melanjutkan ke Dashboard layanan Akademik Success FEB UNM</p>
+        <form>
+            <input type="text" placeholder="Phone number / email address" required>
+            <input type="password" placeholder="Password" required>
+            <div class="terms">
+                <label for="terms">I confirm that I have read, consent and agree to DeepSeek's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+            </div>
+            <button type="submit">Log in</button>
+            <div class="links">
+                <a href="{% url 'forgot_password' %}">Forgot password?</a>
+                <a href="#">Sign up</a>
+            </div>
+            <div class="separator">OR</div>
+            <button class="google-login" type="submit">Google AUTH</button>
+        </form>
+    </div>
+    <!-- Login Page -->
+
+<!-- IF diperlukan saja/Dark Mode -->
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+<!-- IF diperlukan saja /Dark Mode -->
+</body>
+</html>
