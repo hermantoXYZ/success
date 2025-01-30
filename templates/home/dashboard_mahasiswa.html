@@ -21,8 +21,9 @@
         <!-- Sidebar Header -->
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="https://unm.ac.id/wp-content/uploads/2022/02/logo-unm-blu-800x186.png" alt="CodingNepal" />
+            <img src="https://feb.unm.ac.id/media/logo/LOGO.png" alt="CodingNepal" />
           </a>
+          
           <button class="sidebar-toggler">
             <span class="material-symbols-rounded">chevron_left</span>
           </button>
@@ -170,8 +171,18 @@ document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
 // Attach click event to sidebar toggle buttons
 document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
   button.addEventListener("click", () => {
-    closeAllDropdowns(); // Close all open dropdowns
-    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle collapsed class on sidebar
+    closeAllDropdowns(); // Tutup semua dropdown yang terbuka
+    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle kelas collapsed pada sidebar
+    
+    // Ambil elemen logo
+    let logo = document.querySelector(".header-logo img");
+
+    // Cek apakah sidebar dalam keadaan collapsed atau tidak
+    if (document.querySelector(".sidebar").classList.contains("collapsed")) {
+      logo.src = "https://feb.unm.ac.id/media/logo/LOGO1.png"; // Ganti ke logo baru
+    } else {
+      logo.src = "/media/logo.png"; // Kembalikan ke logo awal
+    }
   });
 });
 

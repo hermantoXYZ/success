@@ -23,6 +23,14 @@ body {
     color: #ffffff;
 }
 
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff; /* Sesuaikan warna teks */
+  text-decoration: none;
+}
+
 /* CSS LOGIN */
 .container {
     background: white;
@@ -244,12 +252,13 @@ button:hover{
 }
 
 .sidebar-header .header-logo img {
-  width: 46px;
-  height: 46px;
+  width: 116px;
+  height: 116px;
   display: block;
   object-fit: contain;
   border-radius: 50%;
 }
+
 
 .sidebar-header .sidebar-toggler,
 .sidebar-menu-button {
