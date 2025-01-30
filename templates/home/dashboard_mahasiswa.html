@@ -9,19 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-<body>
-
-
-      <!-- Mobile Sidebar Menu Button -->
+<body >
       <button class="sidebar-menu-button">
         <span class="material-symbols-rounded">menu</span>
       </button>
   
       <aside class="sidebar">
-        <!-- Sidebar Header -->
+
         <header class="sidebar-header">
           <a href="#" class="header-logo">
-            <img src="https://feb.unm.ac.id/media/logo/LOGO.png" alt="CodingNepal" />
+            <img src="https://feb.unm.ac.id/media/logo/LOGO.png" alt="Success" />
           </a>
           
           <button class="sidebar-toggler">
@@ -30,7 +27,7 @@
         </header>
   
         <nav class="sidebar-nav">
-          <!-- Primary Top Nav -->
+
           <ul class="nav-list primary-nav">
             <li class="nav-item">
               <a href="#" class="nav-link">
@@ -42,7 +39,7 @@
               </ul>
             </li>
   
-            <!-- Dropdown -->
+     
             <li class="nav-item dropdown-container">
               <a href="#" class="nav-link dropdown-toggle">
                 <span class="material-symbols-rounded">calendar_today</span>
@@ -50,7 +47,7 @@
                 <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
               </a>
   
-              <!-- Dropdown Menu -->
+  
               <ul class="dropdown-menu">
                 <li class="nav-item"><a class="nav-link dropdown-title">Services</a></li>
                 <li class="nav-item"><a href="#" class="nav-link dropdown-link">IT Consulting</a></li>
@@ -78,7 +75,7 @@
               </ul>
             </li>
   
-            <!-- Dropdown -->
+ 
             <li class="nav-item dropdown-container">
               <a href="#" class="nav-link dropdown-toggle">
                 <span class="material-symbols-rounded">star</span>
@@ -86,7 +83,7 @@
                 <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
               </a>
   
-              <!-- Dropdown Menu -->
+
               <ul class="dropdown-menu">
                 <li class="nav-item"><a class="nav-link dropdown-title">Bookmarks</a></li>
                 <li class="nav-item"><a href="#" class="nav-link dropdown-link">Saved Tutorials</a></li>
@@ -115,7 +112,7 @@
             </li>
           </ul>
   
-          <!-- Secondary Bottom Nav -->
+  
           <ul class="nav-list secondary-nav">
             <li class="nav-item">
               <a href="#" class="nav-link">
@@ -138,23 +135,22 @@
           </ul>
         </nav>
       </aside>
-
+      
 
 <script>
-    // Toggle the visibility of a dropdown menu
+
 const toggleDropdown = (dropdown, menu, isOpen) => {
   dropdown.classList.toggle("open", isOpen);
   menu.style.height = isOpen ? `${menu.scrollHeight}px` : 0;
 };
 
-// Close all open dropdowns
 const closeAllDropdowns = () => {
   document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
     toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu"), false);
   });
 };
 
-// Attach click event to all dropdown toggles
+
 document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
   dropdownToggle.addEventListener("click", (e) => {
     e.preventDefault();
@@ -163,32 +159,35 @@ document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
     const menu = dropdown.querySelector(".dropdown-menu");
     const isOpen = dropdown.classList.contains("open");
 
-    closeAllDropdowns(); // Close all open dropdowns
-    toggleDropdown(dropdown, menu, !isOpen); // Toggle current dropdown visibility
+    closeAllDropdowns(); 
+    toggleDropdown(dropdown, menu, !isOpen); 
   });
 });
 
-// Attach click event to sidebar toggle buttons
+
 document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
   button.addEventListener("click", () => {
-    closeAllDropdowns(); // Tutup semua dropdown yang terbuka
-    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle kelas collapsed pada sidebar
+    closeAllDropdowns(); 
+    document.querySelector(".sidebar").classList.toggle("collapsed"); 
     
-    // Ambil elemen logo
-    let logo = document.querySelector(".header-logo img");
 
-    // Cek apakah sidebar dalam keadaan collapsed atau tidak
-    if (document.querySelector(".sidebar").classList.contains("collapsed")) {
-      logo.src = "https://feb.unm.ac.id/media/logo/LOGO1.png"; // Ganti ke logo baru
-    } else {
-      logo.src = "/media/logo.png"; // Kembalikan ke logo awal
+    let logo = document.querySelector(".header-logo");
+    if (!logo.classList.contains("hidden")) {
+      logo.classList.add("hidden");
     }
   });
 });
 
-// Collapse sidebar by default on small screens
+
 if (window.innerWidth <= 1024) document.querySelector(".sidebar").classList.add("collapsed");
 
 </script>
+
+
+
+
+
+
+
 </body>
 </html>

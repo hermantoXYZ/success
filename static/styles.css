@@ -2,12 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 
+:root {
+  /* ===== Colors ===== */
+  --primary-color: #0e4bf1;
+  --panel-color: #fff;
+  --text-color: #000;
+  --black-light-color: #707070;
+  --border-color: #e6e5e5;
+  --toggle-color: #ddd;
+  --box1-color: #4da3ff;
+  --box2-color: #ffe6ac;
+  --box3-color: #e7d1fc;
+  --title-icon-color: #fff;
+
+  /* ====== Transition ====== */
+  --tran-05: all 0.5s ease;
+  --tran-03: all 0.3s ease;
+  --tran-03: all 0.2s ease;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -27,7 +45,7 @@ body {
 .logo-text {
   font-size: 18px;
   font-weight: bold;
-  color: #ffffff; /* Sesuaikan warna teks */
+  color: #ffffff; 
   text-decoration: none;
 }
 
@@ -259,6 +277,9 @@ button:hover{
   border-radius: 50%;
 }
 
+.sidebar.collapsed .header-logo {
+  display: none;
+}
 
 .sidebar-header .sidebar-toggler,
 .sidebar-menu-button {
@@ -319,7 +340,7 @@ button:hover{
 
 .sidebar.collapsed .sidebar-nav .primary-nav {
   overflow: unset;
-  transform: translateY(65px);
+  transform: translateY(135px);
 }
 
 .sidebar-nav .nav-item .nav-link {
