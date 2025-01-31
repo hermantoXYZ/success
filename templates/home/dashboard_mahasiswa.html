@@ -13,7 +13,6 @@
       <button class="sidebar-menu-button">
         <span class="material-symbols-rounded">menu</span>
       </button>
-  
       <aside class="sidebar">
 
         <header class="sidebar-header">
@@ -135,10 +134,34 @@
           </ul>
         </nav>
       </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="main-header">
+          <h1>Dashboard</h1>
+          <!-- Search -->
+          <div class="profile-button">
+            <span class="material-symbols-rounded">account_circle</span>
+          </div>
+        </header>
+        <section class="dashboard-cards">
+          <div class="card">
+            <h2>Total Users</h2>
+            <p>1,245</p>
+          </div>
+          <div class="card">
+            <h2>New Orders</h2>
+            <p>87</p>
+          </div>
+          <div class="card">
+            <h2>Revenue</h2>
+            <p>$12,340</p>
+          </div>
+        </section>
+      </main>
+      <!-- Main Content -->
       
-
 <script>
-
 const toggleDropdown = (dropdown, menu, isOpen) => {
   dropdown.classList.toggle("open", isOpen);
   menu.style.height = isOpen ? `${menu.scrollHeight}px` : 0;
