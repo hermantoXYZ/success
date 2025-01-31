@@ -13,3 +13,6 @@ def forgot_password(request):
 
 def dashboard_mahasiswa(request):
     return render(request, 'home/dashboard_mahasiswa.html')
+
+def profil(request):
+    return render(request, 'home/profil.html')
